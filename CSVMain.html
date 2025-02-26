@@ -8,19 +8,34 @@
     <title>Vesperium</title>
     <link rel="stylesheet" href="../css/header.css">
     <script>
-        function loadHeader() {
+        document.addEventListener("DOMContentLoaded", () => {
             fetch("header.html")
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
                 })
                 .catch(error => console.error("Error loading header:", error));
-        }
-        window.onload = loadHeader;
+        });
     </script>
 </head>
 <body>
     <div id="header-container"></div>
     <p>test</p>
 </body>
+<!-- scrolling javascript -->
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const tickets = document.querySelector('.tickets');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 200) {
+            header.classList.add('scrolled');
+            tickets.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            tickets.classList.remove('scrolled');
+        }
+    });
+</script>
 </html>
