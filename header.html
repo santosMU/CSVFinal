@@ -1,0 +1,63 @@
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+    });
+</script>
+<header>
+    <div class="top-bar">
+        <div class="search-container">
+            <span class="search-icon">Search</span>
+        </div>
+        <div class="logo-container">
+            <img src="assets/images/icon.png" alt="Vesperium Logo" class="logo-img">
+            <span class="logo-text">Vesperium</span>
+        </div>
+        <div class="buttons">
+            <a href="membership.html" class="btn shop">Become a Member</a>
+            <a href="booking.html" class="btn tickets">Tickets</a>
+        </div>
+    </div>
+    <div class="header-content">
+        <nav class="menu">
+            <div class="menu-item">
+                <a href="#">VISIT</a>
+                <div class="dropdown">
+                    <a href="#">Hours & Admission</a>
+                    <a href="#">Directions</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">EXHIBITIONS AND EVENTS</a>
+                <div class="dropdown">
+                    <a href="exhibitions.html">Current Exhibitions</a>
+                    <a href="#">Upcoming Events</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">ART AND ARTISTS</a>
+                <div class="dropdown">
+                    <a href="#">Art</a>
+                    <a href="#">Artists</a>
+                    <a href="#">Magazines</a>
+                    <a href="#">Learning Resources</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">EXPLORE</a>
+                <div class="dropdown">
+                    <a href="#">Collections</a>
+                    <a href="#">Interactive Tours</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">SEE MORE</a>
+                <div class="dropdown">
+                    <a href="about.html">About Us</a>
+                    <a href="about.html">How to Support Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

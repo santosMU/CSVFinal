@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <link rel="icon" type="image/png" href="assets/images/icon.png">
-    <title>Vesperium</title>
+	<link rel="icon" type="image/png" href="../assets/images/icon.png">
+    <title>Plan your Schedules to Visit Vesperium</title>
     <link rel="stylesheet" href="../css/header.css">
     <script>
         function loadHeader() {
@@ -14,13 +14,11 @@
                 .then(data => {
                     document.getElementById("header-container").innerHTML = data;
                 })
-                .catch(error => console.error("Error loading header:", error));
+                .catch(error => console.error("error fetching header ", error));
         }
         window.onload = loadHeader;
     </script>
 </head>
 <body>
     <div id="header-container"></div>
-    <p>test</p>
 </body>
-</html>
