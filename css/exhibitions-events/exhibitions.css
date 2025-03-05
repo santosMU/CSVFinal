@@ -1,3 +1,4 @@
+/* Content Container */
 #center-container {
     width: 80%;
     max-width: 2000px;
@@ -5,7 +6,7 @@
     background: #f5f5dc;
     padding: 160px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex-grow: 1; /* Makes sure it takes up remaining space */
+    flex-grow: 1;
 }
 
 h1, h2, h4, h5 {
@@ -25,7 +26,7 @@ h1, h2, h4, h5 {
 }
 
 .image-left {
-    float: left;
+    float: left; 
     margin-right: 15px;
 }
 
@@ -45,4 +46,14 @@ h1, h2, h4, h5 {
     color: #666;
     margin-top: 5px;
     text-align: center;
+}
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal-body img {
+    max-width: 100%;
+    height: auto;
 }

@@ -1,0 +1,18 @@
+.card {
+    border: none;
+}
+.card img {
+    height: 180px; /* Adjust as needed */
+    object-fit: cover;
+}
+.on-view {
+    color: green;
+    font-weight: bold;
+}
+
+.artgallerycontainer {
+    padding-bottom: 50px;
+    background-image: url(/assets/images/container-bg.png);
+    background-repeat: repeat;
+    background-size: 35%;
+}

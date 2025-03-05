@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" href="/assets/images/icon.png">
+    <title>Vesperium Magazines</title>
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- wrapper css -->
+    <link rel="stylesheet" href="/css/wrapper.css">
+    <!-- header css -->
+    <link rel="stylesheet" href="/css/header.css">
+    <!-- footer css -->
+    <link rel="stylesheet" href="/css/footer.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // insert header
+            fetch("/header-footer/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading header:", error));
+
+            // insert footer
+            fetch("/header-footer/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading footer:", error));
+        });
+    </script>
+    <!-- magazines.css -->
+    <link rel="stylesheet" href="/css/art-artists/magazines.css">
+    <!-- magazine-header.css -->
+    <link rel="stylesheet" href="/css/art-artists/magazine-header.css">
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <!-- header declaration -->
+
+    <div id="big-wrapper">
+
+        <!-- filter art -->
+        <div class="filter-container">
+            <div class="filter-content">
+                <h2>Newsletter</h2>
+                <span>Passionate perspectives on art, artists,
+                    and ideas that shape culture today</span>
+            </div>
+        </div>
+
+        <div class="magazine-container">
+            <!-- Featured Main Article -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="featured">
+                        <iframe width="100%" height="400"
+                            src="https://www.youtube.com/embed/6ZzlhOpJLdM?si=4cjGyASxbg-ahH04"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="featured-text">
+                            <span class="article-category">Art and the Senses</span>
+                            <h2 class="featured-title">Kidlat Tahimik Reflects On His Craft, Fatherhood, and Duendes
+                            </h2>
+                            <p class="featured-desc">Bamboo camera-wielding filmmaker-artist-shaman-extraordinaire
+                                Kidlat Tahimik
+                                reflects on the power of cosmic faith and duendes throughout his life.</p>
+                            <small class="featured-meta">Esquire Philippines | Nov 22, 2023</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Articles Row -->
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="article">
+                        <a href="https://up.edu.ph/revolutionary-walls-the-activists-canvas/"><img
+                                src="/assets/art-artists/mini-article1.png" alt="Article Image"></a>
+                        <h5 class="article-title"><a
+                                href="https://up.edu.ph/revolutionary-walls-the-activists-canvas/">Revolutionary Walls:
+                                The Activist’s Canvas</a></h5>
+                        <p class="article-desc">“The wall is alive. It continually evolves, reflecting the nation’s
+                            pressing concerns.”</p>
+                        <small class="article-meta">Kevin Christian Roque | March 15 2024</small>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="article">
+                        <a href="https://up.edu.ph/holding-on-to-a-dream/"><img
+                                src="/assets/art-artists/mini-article2.png" alt="Article Image"></a>
+                        <h5 class="article-title"><a href="https://up.edu.ph/holding-on-to-a-dream/">Holding on to a
+                                dream</a></h5>
+                        <p class="article-desc">The artist’s former sail-making loft on the East River in downtown
+                            Manhattan.</p>
+                        <small class="article-meta">Arlyn VCD Palisoc Romualdo | May 4 2018</small>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="article">
+                        <a href="https://salcedoauctions.com/stories/pepito-albert-collection"><img
+                                src="/assets/art-artists/mini-article3.png" alt="Article Image"></a>
+                        <h5 class="article-title"><a
+                                href="https://salcedoauctions.com/stories/pepito-albert-collection">Pepito Albert
+                                Collection</a></h5>
+                        <p class="article-desc">Discover Pepito Albert's elegant designs, loved by Manila's elite.
+                            Immerse yourself in his world of haute couture and artistic expression.</p>
+                        <small class="article-meta">Glenna Aquino | 20 October 2023</small>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="article">
+                        <a href=""><img src="/assets/art-artists/mini-article4.png" alt="Article Image"></a>
+                        <h5 class="article-title"><a href="">Contemporary Arts in the Philippines: An Introduction</a>
+                        </h5>
+                        <p class="article-desc">
+                            Contemporary arts in the Philippines encapsulate a vibrant and diverse spectrum of artistic
+                            expressions. They reflect the nation’s rich cultural heritage, social issues, and modern-day
+                            challenges</p>
+                        <small class="article-meta">Chad Rialp | February 18 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer declaration -->
+    <div id="footer-container"></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- scrolling javascript -->
+<script>
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        const tickets = document.querySelector('.tickets');
+        const scrollPosition = window.scrollY;
+
+        if (header && tickets) {
+            if (scrollPosition > 150) {
+                header.classList.add('scrolled');
+                tickets.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+                tickets.classList.remove('scrolled');
+            }
+        }
+    });
+</script>
+
+</html>

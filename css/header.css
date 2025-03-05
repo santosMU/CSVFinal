@@ -33,7 +33,7 @@ header {
 
 
 header.scrolled {
-    transform: translateY(-100px); /* Moves slightly up */
+    transform: translateY(-100px);
 }
 
 
@@ -67,7 +67,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     gap: 0.875rem;
-    color: inherit; 
+    color: inherit;
 }
 
 .logo-container {
@@ -228,24 +228,24 @@ header.scrolled {
     max-width: 25%;
     min-width: 9.375rem;
     margin-right: 0;
-  }
+}
 
 .btn {
-padding: 0.625rem 0.9375rem;
-border-radius: 1.25rem;
-font-size: 0.875rem;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
+    padding: 0.625rem 0.9375rem;
+    border-radius: 1.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .membership {
-  background: rgba(255, 255, 255, 0.05);
-  border: 0.0625rem solid rgba(255, 255, 255, 0.25);
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.25);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
 
 .membership:hover {
@@ -256,7 +256,7 @@ justify-content: center;
 }
 
 .tickets {
-    background: #BF2E21;
+    background: linear-gradient(135deg, #BF2E21, #984139, #b63c35);
     border: none;
     font-weight: bold;
     color: white;
@@ -273,7 +273,7 @@ justify-content: center;
 }
 
 .tickets:hover {
-    background: #8b231a;
+    background: linear-gradient(135deg, #a0261a, #652c27, #742622);
     border: none;
     font-weight: bold;
     color: white;
@@ -285,13 +285,15 @@ justify-content: center;
 /* header */
 @media (max-width: 768px) {
     header {
-        background-size: 100%; /* Make the pattern larger on smaller screens */
+        background-size: 100%;
+        /* Make the pattern larger on smaller screens */
     }
 
     header.scrolled {
-        transform: translateY(-135px); /* Moves slightly up */
+        transform: translateY(-135px);
+        /* Moves slightly up */
     }
-    
+
     .logo-img {
         height: 2.75rem;
         margin-right: 0.5rem;

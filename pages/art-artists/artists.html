@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-	<link rel="icon" type="image/png" href="/assets/images/icon.png">
+    <link rel="icon" type="image/png" href="/assets/images/icon.png">
     <title>Vesperium Featured Artists</title>
     <!-- bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@
                     document.getElementById("header-container").innerHTML = data;
                 })
                 .catch(error => console.error("Error loading header:", error));
-    
+
             // insert footer
             fetch("/header-footer/footer.html")
                 .then(response => response.text())
@@ -33,30 +34,268 @@
                 .catch(error => console.error("Error loading footer:", error));
         });
     </script>
+    <!-- artists.css -->
+    <link rel="stylesheet" href="/css/art-artists/artists.css">
+    <!-- search filter -->
+    <link rel="stylesheet" href="/css/art-artists/search-filter.css">
 </head>
+
 <body>
     <div id="header-container"></div>
     <!-- header declaration -->
-    <div class="content">
-        <h1>Sample Content</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <div id="big-wrapper">
+        <!-- top slide gallery -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/assets/art-artists/artistbanner1-ElitoCirca.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/art-artists/artistbanner2-BjornCalleja.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/art-artists/artistbanner3-JohannaHelmuth.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/assets/art-artists/artistbanner4-RyanJara.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <!-- filter art -->
+        <div class="filter-container">
+            <div class="filter-content">
+                <h5>Filter Artists Collaborated with Vesperium</h5>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="contemporary" checked>
+                        <label for="contemporary">Contemporary</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="traditional">
+                        <label for="traditional">Traditional</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- masonry grid -->
+        <div class="masonrygrid">
+            <div class="artistgallery pt-3">
+                <div class="row row-cols-2 row-cols-sm-5 row-cols-md-2 row-cols-lg-5 g-3">
+                    <!-- Artist1: Doctor Karayom -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist2-DoctorKarayom.jpg" class="card-img" alt="Artist 2">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Doctor Karayom</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist2: Nune Alvarado -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist1-NuneAlvarado.jpg" class="card-img" alt="Artist 1">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Nune Alvarado</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist3: Ronald Ventura -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist4-RonaldVentura.png" class="card-img" alt="Artist 4">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Ronald Ventura</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist4: Melvin Gurheim -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist3-MelvinGurheim.jpg" class="card-img" alt="Artist 3">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Melvin Gurheim</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist5: Andres Barrioquinto -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist5-AndresBarrioquinto.png" class="card-img" alt="Artist 5">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Andres Barrioquinto</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist6: Juanito Maiquez -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist6-JuanitoMaiquez.png" class="card-img" alt="Artist 6">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Juanito Maiquez</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist7: Benedicto Cabrera -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist7-BenedictoCabrera.jpg" class="card-img" alt="Artist 7">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Benedicto Cabrera</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist8: Manuel Ocampo -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist8-ManuelOcampo.png" class="card-img" alt="Artist 8">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Manuel Ocampo</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist9: Dex Fernandez -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist9-DexFernandez.png" class="card-img" alt="Artist 9">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Dex Fernandez</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist10: Marina Cruz -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist10-MarinaCruz.png" class="card-img" alt="Artist 10">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Marina Cruz</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist11: Geraldine Javier -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist11-GeraldineJavier.png" class="card-img" alt="Artist 11">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Geraldine Javier</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist12: Patricia Eustaquio -->
+                    <div class="col" data-category="contemporary">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist12-PatriciaEustaquio.png" class="card-img" alt="Artist 12">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Patricia Eustaquio</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist13: Simon Flores -->
+                    <div class="col" data-category="traditional">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist13-SimonFlores.jpg" class="card-img" alt="Artist 13">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Simon Flores</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist14: Justiniano Asuncion -->
+                    <div class="col" data-category="traditional">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist14-JustinianoAsuncion.jpg" class="card-img" alt="Artist 14">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Justiniano Asuncion</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist15: Isabelo Tampinco -->
+                    <div class="col" data-category="traditional">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist15-IsabeloTampinco.jpg" class="card-img" alt="Artist 15">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Isabelo Tampinco</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artist16: Martino Abellana -->
+                    <div class="col" data-category="traditional">
+                        <div class="card artist-card">
+                            <img src="/assets/art-artists/artist16-MartinoAbellana.jpg" class="card-img" alt="Artist 16">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                                <h5 class="fw-bold">Martino Abellana</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="footer-container"></div>
     <!-- footer declaration -->
 </body>
+<!-- carousel JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- filter functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.custom-checkbox input');
+        const artistCards = document.querySelectorAll('.artist-card');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                filterArtists();
+            });
+        });
+
+        function filterArtists() {
+            const selectedCategories = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.id);
+
+            artistCards.forEach(card => {
+                const category = card.closest('.col').getAttribute('data-category');
+                if (selectedCategories.includes(category)) {
+                    card.closest('.col').style.display = 'block';
+                } else {
+                    card.closest('.col').style.display = 'none';
+                }
+            });
+        }
+
+        filterArtists();
+    });
+</script>
 <!-- scrolling javascript -->
 <script>
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const header = document.querySelector('header');
         const tickets = document.querySelector('.tickets');
         const scrollPosition = window.scrollY;
@@ -72,4 +311,5 @@
         }
     });
 </script>
+
 </html>

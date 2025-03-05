@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
                     document.getElementById("header-container").innerHTML = data;
                 })
                 .catch(error => console.error("Error loading header:", error));
-    
+
             // insert footer
             fetch("/header-footer/footer.html")
                 .then(response => response.text())
@@ -34,18 +35,29 @@
         });
     </script>
     <!-- art.html css -->
-    <link rel="stylesheet" href="/css/art-artists/art.css"> 
+    <link rel="stylesheet" href="/css/art-artists/art.css">
+    <!-- search filter -->
+    <link rel="stylesheet" href="/css/art-artists/search-filter.css">
+    <!-- art gallery -->
+    <link rel="stylesheet" href="/css/art-artists/art-gallery.css">
 </head>
+
 <body>
     <div id="header-container"></div>
     <!-- header declaration -->
+
     <div id="big-wrapper">
+        <!-- top slide gallery -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -61,20 +73,219 @@
                     <img src="/assets/art-artists/art-banner4.png" class="d-block w-100" alt="...">
                 </div>
             </div>
-        </div>        
+        </div>
 
-        <div class="content">
-            <h1>Sample Content</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <!-- filter art -->
+        <div class="filter-container">
+            <div class="filter-content">
+                <h5>Filter Art Mediums Exhibited by Vesperium</h5>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="painting" checked>
+                        <label for="painting">Painting</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="sculpture" checked>
+                        <label for="sculpture">Sculpture</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="artifact" checked>
+                        <label for="artifact">Historical Artifact</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" id="digital" checked>
+                        <label for="digital">Digital Art</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- art gallery -->
+        <div class="artgallerycontainer content">
+            <div class="container pt-4">
+                <div class="row g-4">
+                    <!-- Artwork 1 -->
+                    <div class="col-md-2" data-category="digital">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork1.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Miguel Santos</h6>
+                                <p class="mb-1"><i>Cosmic Voyage</i></p>
+                                <p class="mb-1">2024</p>
+                                <p class="on-view">On view<br>Gallery 216</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 2 -->
+                    <div class="col-md-2" data-category="sculpture">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork2.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Elena Ramirez</h6>
+                                <p class="mb-1"><i>Eternal Gaze</i></p>
+                                <p class="mb-1">1956</p>
+                                <p class="on-view">On view<br>Gallery 216</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 3 -->
+                    <div class="col-md-2" data-category="sculpture">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork3.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Carlos Dela Cruz</h6>
+                                <p class="mb-1"><i>Fragmented Echoes</i></p>
+                                <p class="mb-1">2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 4 -->
+                    <div class="col-md-2" data-category="painting">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork4.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Isabela Montano</h6>
+                                <p class="mb-1"><i>Dreamwalker’s Lament</i></p>
+                                <p class="mb-1">2022</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 5 -->
+                    <div class="col-md-2" data-category="sculpture">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork5.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Ricardo Salazar</h6>
+                                <p class="mb-1"><i>Divine Embrace</i></p>
+                                <p class="mb-1">1989</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 6 -->
+                    <div class="col-md-2" data-category="painting">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork6.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Ang Kiukok</h6>
+                                <p class="mb-1"><i>Geometric Tension</i></p>
+                                <p class="mb-1">1969/2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 7 -->
+                    <div class="col-md-2" data-category="painting">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork7.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Elmer Borlongan</h6>
+                                <p class="mb-1"><i>Distorted Faces of Society</i></p>
+                                <p class="mb-1">2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 8 -->
+                    <div class="col-md-2" data-category="digital">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork8.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Rodel Tapaya</h6>
+                                <p class="mb-1"><i>Mythical Realities</i></p>
+                                <p class="mb-1">2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 9 -->
+                    <div class="col-md-2" data-category="sculpture">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork9.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Julie Lluch</h6>
+                                <p class="mb-1"><i>Silent Protest</i></p>
+                                <p class="mb-1">2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 10 -->
+                    <div class="col-md-2" data-category="artifact">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork10.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Leon Pacunayen</h6>
+                                <p class="mb-1"><i>Forged Blades of Time</i></p>
+                                <p class="mb-1">Traditional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 11 -->
+                    <div class="col-md-2" data-category="digital">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork11.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Andrés Jaque</h6>
+                                <p class="mb-1">Reggio School, Madrid, Spain</p>
+                                <p class="mb-1">2024</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 12 -->
+                    <div class="col-md-2" data-category="painting">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork12.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Juan Luna</h6>
+                                <p class="mb-1"><i>The Battle of Lepanto</i></p>
+                                <p class="mb-1">Traditional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 13 -->
+                    <div class="col-md-2" data-category="painting">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork13.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Fernando Amorsolo</h6>
+                                <p class="mb-1"><i>Filipina in Traditional Dress</i></p>
+                                <p class="mb-1">Traditional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 14 -->
+                    <div class="col-md-2" data-category="painting">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork14.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">Jose Joya</h6>
+                                <p class="mb-1"><i>Vibrant Abstract Rhythms</i></p>
+                                <p class="mb-1">Traditional</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artwork 15 -->
+                    <div class="col-md-2" data-category="artifact">
+                        <div class="card">
+                            <img src="/assets/art-artists/artwork15.jpg" class="card-img-top" alt="Artwork">
+                            <div class="card-body">
+                                <h6 class="card-title fw-bold">National Museum Collection</h6>
+                                <p class="mb-1"><i>Historical Pottery & Sculptures</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- footer declaration -->
@@ -83,9 +294,39 @@
 </body>
 <!-- carousel JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- filter functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const checkboxes = document.querySelectorAll('.custom-checkbox input');
+        const artworkCards = document.querySelectorAll('.artgallerycontainer .col-md-2');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                filterArtworks();
+            });
+        });
+
+        function filterArtworks() {
+            const selectedCategories = Array.from(checkboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.id);
+
+            artworkCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (selectedCategories.includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        filterArtworks(); s
+    });
+</script>
 <!-- scrolling javascript -->
 <script>
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const header = document.querySelector('header');
         const tickets = document.querySelector('.tickets');
         const scrollPosition = window.scrollY;
@@ -101,4 +342,5 @@
         }
     });
 </script>
+
 </html>

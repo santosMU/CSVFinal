@@ -1,0 +1,59 @@
+/* Content Container */
+#center-container {
+    width: 80%;
+    max-width: 2000px;
+    margin: 0 auto;
+    background: #f5f5dc;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 150px;
+}
+
+h1, h2, h4, h5 {
+    margin: 10px 0;
+}
+
+h1, h2 {
+    text-align: center;
+}
+.text-content {
+    font-size: 20px;
+}
+.text-content p {
+    margin-bottom: 15px;
+}
+#page_head {
+    font-size: 48px;
+}
+
+/* Donation Form */
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0070ba;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #005a94;
+}

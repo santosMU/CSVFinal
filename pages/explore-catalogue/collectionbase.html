@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="icon" type="image/png" href="../assets/images/icon.png">
+    <title>Vesperium Collection</title>
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- wrapper css -->
+    <link rel="stylesheet" href="/css/wrapper.css">
+    <!-- header css -->
+    <link rel="stylesheet" href="/css/header.css">
+    <!-- footer css -->
+    <link rel="stylesheet" href="/css/footer.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // insert header
+            fetch("/header-footer/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading header:", error));
+    
+            // insert footer
+            fetch("/header-footer/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading footer:", error));
+        });
+    </script>
+    <!-- collectionbase.html css -->
+    <link rel="stylesheet" href="/css/explore-catalogue/collectionbase.css"> 
+</head>
+<body>
+    <div id="header-container"></div>
+    <!-- header declaration -->
+    <div id="big-wrapper">
+        <div id="center-container">
+            <h1 class="page-head">Collections</h1>
+            <div class="product-container">
+                <a href="/pages/explore-catalogue/filwear.html" class="card-link">
+                    <div class="product-card">
+                        <img src="/assets/images/barongtagalog.jpg" alt="barongtagalog">
+                        <div class="card-text">Filipino Traditional Wear</div>
+                        <div class="arrow"></div>
+                    </div>
+                </a>
+                <a href="/pages/explore-catalogue/filtools.html" class="card-link">
+                    <div class="product-card">
+                        <img src="/assets/images/duyongshelladze.jpg" alt="duyongshelladze">
+                        <div class="card-text">Filipino Ancient Tools</div>
+                        <div class="arrow"></div>
+                    </div>
+                <a href="/pages/explore-catalogue/filweapons.html" class="card-link">
+                    <div class="product-card">
+                        <img src="/assets/images/bolo.JPG" alt="bolo">
+                        <div class="card-text">Filipino Ancient Weapons</div>
+                        <div class="arrow"></div>
+                    </div>
+                </a>
+                <a href="/pages/explore-catalogue/filinventions.html" class="card-link">
+                    <div class="product-card">
+                        <img src="/assets/images/bananaketchup.jpg" alt="bananaketchup">
+                        <div class="card-text">Filipino First Inventions</div>
+                        <div class="arrow"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- footer declaration -->
+        <div id="footer-container"></div>
+    </div>
+    </div>
+    
+</body>
+<!-- scrolling javascript -->
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const tickets = document.querySelector('.tickets');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 200) {
+            header.classList.add('scrolled');
+            tickets.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            tickets.classList.remove('scrolled');
+        }
+    });
+</script>
+</html>

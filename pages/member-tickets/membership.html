@@ -40,68 +40,73 @@
 
 <body>
     <div id="header-container"></div>
+    <!-- header declaration -->
 
+    <center>
     <div class="big-wrapper">
-        <div class="form-container">
-            <h1 class="form-title">Membership Form</h1>
-            <form action="#">
-                <div class="main-user-info">
-                    <div class="user-input-box">
-                        <label for="FullName">Full Name</label>
-                        <input type="text" id="FullName" name="FullName" placeholder="Enter your full name" />
+        <div class="form-bgcontainer">
+            <div class="form-container">
+                <h1 class="form-title">Membership Form</h1>
+                <form action="#">
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="FullName">Full Name</label>
+                            <input type="text" id="FullName" name="FullName" placeholder="Enter your full name" />
+                        </div>
+                        <div class="user-input-box">
+                            <label for="Age">Age</label>
+                            <input type="old" id="Age" name="Age" placeholder="Age" />
+                        </div>
+                        <div class="user-input-box">
+                            <label for="Email">Email Address</label>
+                            <input type="email" id="Email" name="Email" placeholder="Email" />
+                        </div>
+                        <div class="user-input-box">
+                            <label for="Number">Phone Number</label>
+                            <input type="num" id="Number" name="Number" placeholder="Phone Number" />
+                        </div>
                     </div>
-                    <div class="user-input-box">
-                        <label for="Age">Age</label>
-                        <input type="old" id="Age" name="Age" placeholder="Age" />
+        
+                    <div class="preffered-contact">
+                        <span class="pref-cont">Preferred Contact Method</span>
+                        <div class="pref-meth">
+                            <input type="radio" name="contact" value="Email" required>
+                            <label for="Email">Email</label>
+                            <input type="radio" name="contact" value="Number" required>
+                            <label for="Number">Phone Number</label>
+                        </div>
                     </div>
-                    <div class="user-input-box">
-                        <label for="Email">Email Address</label>
-                        <input type="email" id="Email" name="Email" placeholder="Email" />
+        
+                    <div class="main-user-info">
+                        <div class="user-input-box">
+                            <label for="DateOfBirth">Date of Birth:</label>
+                            <input type="date" id="DateOfBirth" name="DateOfBirth">
+                        </div>
+        
+                        <div class="user-input-box">
+                            <label for="occu">Current Occupancy</label>
+                            <input type="curoccu" id="occu" name="occu" placeholder="Current Occupancy" />
+                        </div>
+        
+                        <div class="user-input-box">
+                            <label for="rel">Religion</label>
+                            <input type="reli" id="reli" name="reli" placeholder="Religion" />
+                        </div>
+        
+                        <div class="user-input-box">
+                            <label for="mas">Marital Status</label>
+                            <input type="mass" id="mas" name="mas" placeholder="Marital Status" />
+                        </div>
+        
+                        <div class="form-submit-btn">
+                            <input type="submit" value="Register">
+                        </div>
                     </div>
-                    <div class="user-input-box">
-                        <label for="Number">Phone Number</label>
-                        <input type="num" id="Number" name="Number" placeholder="Phone Number" />
-                    </div>
-                </div>
-    
-                <div class="preffered-contact">
-                    <span class="pref-cont">Preferred Contact Method</span>
-                    <div class="pref-meth">
-                        <input type="radio" name="contact" value="Email" required>
-                        <label for="Email">Email</label>
-                        <input type="radio" name="contact" value="Number" required>
-                        <label for="Number">Phone Number</label>
-                    </div>
-                </div>
-    
-                <div class="main-user-info">
-                    <div class="user-input-box">
-                        <label for="DateOfBirth">Date of Birth:</label>
-                        <input type="date" id="DateOfBirth" name="DateOfBirth">
-                    </div>
-    
-                    <div class="user-input-box">
-                        <label for="occu">Current Occupancy</label>
-                        <input type="curoccu" id="occu" name="occu" placeholder="Current Occupancy" />
-                    </div>
-    
-                    <div class="user-input-box">
-                        <label for="rel">Religion</label>
-                        <input type="reli" id="reli" name="reli" placeholder="Religion" />
-                    </div>
-    
-                    <div class="user-input-box">
-                        <label for="mas">Marital Status</label>
-                        <input type="mass" id="mas" name="mas" placeholder="Marital Status" />
-                    </div>
-    
-                    <div class="form-submit-btn">
-                        <input type="submit" value="Register">
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
+    </center>
 
     <!-- footer declaration -->
     <div id="footer-container"></div>

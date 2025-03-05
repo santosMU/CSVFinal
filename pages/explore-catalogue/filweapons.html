@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+	<link rel="icon" type="image/png" href="../assets/images/icon.png">
+    <title>Vesperium Collection</title>
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- wrapper css -->
+    <link rel="stylesheet" href="/css/wrapper.css">
+    <!-- header css -->
+    <link rel="stylesheet" href="/css/header.css">
+    <!-- footer css -->
+    <link rel="stylesheet" href="/css/footer.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // insert header
+            fetch("/header-footer/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading header:", error));
+    
+            // insert footer
+            fetch("/header-footer/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading footer:", error));
+        });
+    </script>
+    <!-- filweapons.html css -->
+    <link rel="stylesheet" href="/css/explore-catalogue/collectionsubpage.css"> 
+</head>
+<body>
+    <div id="header-container"></div>
+    <!-- header declaration -->
+    <div id="big-wrapper">
+        <div id="center-container">
+            <h1 class="page-head">Filipino Ancient Weapons Collection</h1>
+            <div class="text-content">
+                <div class="image-left">
+                    <img src="/assets/images/bolo.JPG" alt="Bolo">
+                    <p class="caption">Bolo</p>
+                </div>
+                <p>Warfare and self-defense played a crucial role in Filipino history, and the <strong>Filipino Ancient Weapons Collection</strong> at the Vesperium highlights the tools of battle used by warriors, revolutionaries, and freedom fighters. A centerpiece of this collection is the <strong>Bolo Knife</strong>, a multipurpose blade used in combat, agriculture, and daily tasks. Its curved, heavy blade made it a fearsome weapon during the Philippine Revolution and World War II, wielded by Katipuneros and guerrilla fighters alike.</p>
+
+            </p>
+            <div class="image-right">
+                <img src="/assets/images/kampilan.jpg" alt="Kampilan">
+                <p class="caption">Kampilan</p>
+            </div>
+            <p>Another significant weapon in the collection is the <strong>Kampilan</strong>, a long, single-edged sword favored by Muslim warriors and datu leaders in Mindanao. Often adorned with intricate carvings and decorated hilts, this weapon was known for its deadly efficiency in battle. Alongside it, the collection features the <strong>Bangkaw</strong>, a traditional Filipino spear used both for hunting and combat, often tipped with metal or hardened bamboo. The <strong>Panabas</strong>, a curved war sword from Mindanao, and the <strong>Kris</strong>, a wavy-bladed dagger symbolizing both spiritual and physical power, further showcase the evolution of Filipino weaponry.</p>
+
+
+
+            <p>These weapons tell the stories of heroism, survival, and resistance. More than just tools of war, they are symbols of the Filipino warrior spirit—resilient, adaptable, and unyielding in the face of adversity. Through this collection, the Vesperium preserves the legacy of these arms, allowing future generations to appreciate the craftsmanship and bravery of those who wielded them.</p>
+             
+            
+        </div>
+    </div>
+        <!-- footer declaration -->
+        <div id="footer-container"></div>
+    </div>
+</body>
+<!-- scrolling javascript -->
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const tickets = document.querySelector('.tickets');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 200) {
+            header.classList.add('scrolled');
+            tickets.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            tickets.classList.remove('scrolled');
+        }
+    });
+</script>
+</html>
