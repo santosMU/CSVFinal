@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-	<link rel="icon" type="image/png" href="../assets/images/icon.png">
-    <title>About Vesperium</title>
+    <link rel="icon" type="image/png" href="/assets/images/icon.png">
+    <title>Vesperium</title>
     <link rel="stylesheet" href="../css/header.css">
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -20,6 +20,7 @@
 </head>
 <body>
     <div id="header-container"></div>
+    <p>test</p>
 </body>
 <!-- scrolling javascript -->
 <script>
@@ -28,12 +29,14 @@
         const tickets = document.querySelector('.tickets');
         const scrollPosition = window.scrollY;
 
-        if (scrollPosition > 200) {
-            header.classList.add('scrolled');
-            tickets.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-            tickets.classList.remove('scrolled');
+        if (header && tickets) {
+            if (scrollPosition > 150) {
+                header.classList.add('scrolled');
+                tickets.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+                tickets.classList.remove('scrolled');
+            }
         }
     });
 </script>

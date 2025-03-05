@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <link rel="icon" type="image/png" href="assets/images/icon.png">
-    <title>Vesperium</title>
-    <link rel="stylesheet" href="/css/header.css">
-    <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="/assets/images/icon.png">
+    <title>Hours & Admissions</title>
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- wrapper css -->
+    <link rel="stylesheet" href="/css/wrapper.css">
     <!-- header css -->
     <link rel="stylesheet" href="/css/header.css">
     <!-- footer css -->
@@ -22,7 +24,7 @@
                     document.getElementById("header-container").innerHTML = data;
                 })
                 .catch(error => console.error("Error loading header:", error));
-    
+
             // insert footer
             fetch("/header-footer/footer.html")
                 .then(response => response.text())
@@ -32,17 +34,51 @@
                 .catch(error => console.error("Error loading footer:", error));
         });
     </script>
+    <!-- import -->
+    <link rel="stylesheet" href="/css/visit-book/merch.css">
 </head>
+
 <body>
     <div id="header-container"></div>
     <!-- header declaration -->
-    
+    <div class="big-wrapper">
+        <div class="container">
+            <div class="title">
+                <h1>Our Merchandise!</h1>
+            </div>
+
+            <div class="products">
+                <div class="prod">
+                    <img src="/assets/images/tshirt.png">
+                    <h4>Vesperium T-Shirt<span>₱750</span></h4>
+                    <p>The T-Shirt is a plain white tshirt on the front while the back has the logo of the Vesperium
+                        Museum.
+                    </p>
+                </div>
+
+                <div class="prod">
+                    <img src="/assets/images/cap.png">
+                    <h4>Vesperium Cap<span>₱500</span></h4>
+                    <p>The Cap is a plain cap with the Vesperium Museum Logo infront.</p>
+                </div>
+
+                <div class="prod">
+                    <img src="/assets/images/tote.png">
+                    <h4>Vesperium Tote Bag<span>₱1000</span></h4>
+                    <p>The tote bag is a minimalist tote bag with a plain design but with the logo of the Vesperium
+                        Museum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- footer declaration -->
     <div id="footer-container"></div>
 </body>
 <!-- scrolling javascript -->
 <script>
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const header = document.querySelector('header');
         const tickets = document.querySelector('.tickets');
         const scrollPosition = window.scrollY;
@@ -58,4 +94,5 @@
         }
     });
 </script>
+
 </html>

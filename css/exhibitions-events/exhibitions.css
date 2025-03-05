@@ -1,0 +1,48 @@
+#center-container {
+    width: 80%;
+    max-width: 2000px;
+    margin: 0 auto;
+    background: #f5f5dc;
+    padding: 160px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Makes sure it takes up remaining space */
+}
+
+h1, h2, h4, h5 {
+    margin: 10px 0;
+}
+
+#page-head {
+    font-size: 48px;
+}
+
+.text-content {
+    font-size: 20px;
+}
+
+.text-content p {
+    margin-bottom: 15px;
+}
+
+.image-left {
+    float: left;
+    margin-right: 15px;
+}
+
+.image-right {
+    float: right;
+    margin-left: 15px;
+}
+
+.image-left img,
+.image-right img {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.caption {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    text-align: center;
+}

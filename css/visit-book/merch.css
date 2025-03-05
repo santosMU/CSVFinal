@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.container{
+    width: 80vw;
+    margin: auto;
+}
+
+.title h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: bisque;
+}
+
+.products{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.prod{
+    flex-basis: 24%;
+    background-color:antiquewhite;
+    color:#FFA500;
+    padding: 25px;
+    border-radius: 7px;
+    margin:10px;
+}
+
+.prod img{
+    max-width: 100%;
+}
+
+.prod h4{
+    font-size: 26px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.prod h4 span{
+    font-style: italic;
+    color: #ff3836;
+}
+
+.prod p{
+    color: #333;
+    font-size: 16px;
+}
+
+

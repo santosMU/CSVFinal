@@ -1,0 +1,178 @@
+/* reset + body adjust */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------------ */
+
+/* footer design */
+
+footer {
+    background-image: url(../assets/images/footer-bg.png);
+    background-blend-mode: multiply;
+    background-repeat: repeat;
+    background-size: 70%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.footer-content {
+    font-size: small;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-content a {
+    color: inherit; /* Ensure links inherit the color from the parent */
+    transition: color 0.3s ease-in-out; /* Add transition for smooth color change */
+}
+
+.footer-content a:hover {
+    color: #D96A29 !important; /* Change color on hover */
+}
+
+/* align footer contents */
+
+.top-interact {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-content .text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+/* top (socials, email sign up) */
+
+.top-bg {
+    background-image: url("../assets/images/headerbg.png");
+    background-size: 30%;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* socials hover */
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social a {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.social a img {
+    position: absolute;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.social a img:first-child {
+    opacity: 1;
+}
+
+.social a:hover img:first-child {
+    opacity: 0;
+}
+
+.social a:hover img[src*="-hover"] {
+    opacity: 1;
+}
+
+/* email input */
+
+.email-signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem; /* Add gap between elements inside .email-signup */
+}
+
+.row-title {
+    text-align: center;
+}
+
+/* footer logo img + text */
+
+.footer-logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.footer-logo-img img {
+    height: 3.5rem;
+}
+
+/* text design */
+
+.misc-text {
+    color: rgb(202, 202, 202);
+}
+
+.footer-content {
+    padding: 20px 0;
+}
+
+.contact-section ul li {
+    padding-top: 5px;
+    margin-bottom: 13px;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.reserve-text {
+    font-size: small;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}

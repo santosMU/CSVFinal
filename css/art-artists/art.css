@@ -1,0 +1,20 @@
+/* reset + body adjust */
+
+body {
+    padding-top:150px;
+}
+
+/* --------------------------------- */
+
+/* slideshow adjustment */
+
+.carousel-item {
+    height: 400px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 80% 30%;
+}

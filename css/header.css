@@ -1,4 +1,4 @@
-/* reset */
+/* reset + body adjust */
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +7,19 @@
 
 /* ------------------------------------------------ */
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
 /* header */
 header {
     background-image: url("../assets/images/headerbg.png");
-    background-size: 50%;
+    background-size: 40%;
     background-blend-mode: multiply;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 1rem 1.5rem 1.5rem;
+    padding: 0.5rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -26,8 +31,9 @@ header {
     transform: translateY(0);
 }
 
+
 header.scrolled {
-    transform: translateY(-110px); /* Moves slightly up */
+    transform: translateY(-100px); /* Moves slightly up */
 }
 
 
@@ -61,7 +67,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     gap: 0.875rem;
-    color: inherit;
+    color: inherit; 
 }
 
 .logo-container {
@@ -219,27 +225,27 @@ header.scrolled {
     gap: 1rem;
     flex: 1;
     justify-content: flex-end;
-    max-width: 20%;
+    max-width: 25%;
     min-width: 9.375rem;
     margin-right: 0;
-}
+  }
 
 .btn {
-    padding: 0.625rem 0.9375rem;
-    border-radius: 1.25rem;
-    font-size: 0.875rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+padding: 0.625rem 0.9375rem;
+border-radius: 1.25rem;
+font-size: 0.875rem;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .membership {
-    background: rgba(255, 255, 255, 0.05);
-    border: 0.0625rem solid rgba(255, 255, 255, 0.25);
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.25);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .membership:hover {
@@ -256,6 +262,14 @@ header.scrolled {
     color: white;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+    padding: 0.625rem 0.9375rem;
+    position: relative;
+    top: 0rem;
+    right: 0rem;
+}
+
+.tickets.scrolled {
+    top: 5.875em;
 }
 
 .tickets:hover {
@@ -264,4 +278,34 @@ header.scrolled {
     font-weight: bold;
     color: white;
     text-decoration: underline;
+}
+
+/* MEDIA ADJUSTING ------------------------------------------------ */
+
+/* header */
+@media (max-width: 768px) {
+    header {
+        background-size: 100%; /* Make the pattern larger on smaller screens */
+    }
+
+    header.scrolled {
+        transform: translateY(-135px); /* Moves slightly up */
+    }
+    
+    .logo-img {
+        height: 2.75rem;
+        margin-right: 0.5rem;
+        position: relative;
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+        z-index: 2;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+        z-index: 3;
+    }
 }

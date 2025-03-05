@@ -1,0 +1,64 @@
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+    });
+</script>
+<header>
+    <div class="top-bar">
+        <div class="logo-container">
+            <a href="/CSVMain.html" class="logo-link">
+                <div class="logo-img-wrapper">
+                    <img src="/assets/images/icon.png" alt="Vesperium Logo" class="logo-img">
+                </div>
+                <span class="logo-text">Vesperium</span>
+            </a>
+        </div>               
+        <div class="buttons">
+            <a href="/pages/member-tickets/membership.html" class="btn membership">BECOME A MEMBER</a>
+            <a href="/pages/member-tickets/booking.html" class="btn tickets">TICKETS</a>
+        </div>
+    </div>
+    <div class="header-content">
+        <nav class="menu">
+            <div class="menu-item">
+                <a class="menu-option" href="#">VISIT AND BOOK</a>
+                <div class="dropdown">
+                    <a href="/pages/visit-book/hours-admission.html">Hours & Admission</a>
+                    <a href="/pages/visit-book/merchandise.html">Merchandise</a>
+                    <a href="/pages/visit-book/accessibility.html">Accessibility</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a class="menu-option" href="#">EXHIBITIONS, EVENTS</a>
+                <div class="dropdown">
+                    <a href="/pages/exhibitions-events/exhibitions.html">Current Exhibitions</a>
+                    <a href="/pages/exhibitions-events/upcoming.html">Upcoming Events</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a class="menu-option" href="#">ART, ARTISTS</a>
+                <div class="dropdown">
+                    <a href="/pages/art-artists/art.html">Art</a>
+                    <a href="/pages/art-artists/artists.html">Artists</a>
+                    <a href="/pages/art-artists/magazines.html">Magazines</a>
+                    <a href="/pages/art-artists/resources.html">Learning Resources</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a class="menu-option" href="#">EXPLORE CATALOGUE</a>
+                <div class="dropdown">
+                    <a href="#">Collections</a>
+                    <a href="#">Interactive Tours</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a class="menu-option" href="#">LEARN MORE</a>
+                <div class="dropdown">
+                    <a href="/pages/learn-more/about.html">About Us</a>
+                    <a href="/pages/learn-more/support.html">Support Us</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
